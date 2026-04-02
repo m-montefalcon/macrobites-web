@@ -9,7 +9,7 @@ import {
 } from "react";
 import { apiMe, apiLogout } from "@/lib/api";
 
-type User = { id: string; email: string; name: string } | null;
+type User = { id: string; email: string; name: string; avatar?: string } | null;
 
 interface AuthContextValue {
   user: User;

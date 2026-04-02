@@ -1,5 +1,6 @@
 import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
+import ThemeRegistry from "./components/ThemeRegistry";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <ThemeRegistry>{children} </ThemeRegistry>
+        </AuthProvider>
       </body>
     </html>
   );

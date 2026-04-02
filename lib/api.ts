@@ -13,6 +13,7 @@ export async function apiRegister(
   password: string,
   name: string,
 ) {
+  console.log("Registering user:", { email, name });
   const res = await apiFetch("/auth/register", {
     method: "POST",
     body: JSON.stringify({ email, password, name }),
