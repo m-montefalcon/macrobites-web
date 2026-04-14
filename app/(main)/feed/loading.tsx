@@ -1,5 +1,6 @@
-import { Skeleton } from "@mui/material";
-import { Box } from "@mui/material";
+"use client";
+
+import { Skeleton, Box } from "@mui/material";
 
 export default function Loading() {
   const NUMBER_OF_POSTS = 5;
