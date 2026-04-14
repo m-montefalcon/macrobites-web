@@ -1,5 +1,6 @@
-import { Skeleton } from "@mui/material";
-import { Box } from "@mui/material";
+"use client";
+
+import { Box, Skeleton } from "@mui/material";
 
 export default function Loading() {
   const NUMBER_OF_POSTS = 5;
@@ -12,7 +13,7 @@ export default function Loading() {
         alignItems="center"
         mt={5}
       >
-        <Skeleton variant="rounded" width={650} height={140} />
+        <Skeleton variant="rounded" width="100%" sx={{ maxWidth: 650 }} height={140} />
       </Box>
 
       <Box
@@ -31,6 +32,8 @@ export default function Loading() {
             flexDirection="column"
             alignItems="flex-start"
             gap={2}
+            width="100%"
+            sx={{ maxWidth: 650 }}
           >
             <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
               <Skeleton variant="circular" width={40} height={40} />
@@ -45,9 +48,9 @@ export default function Loading() {
                 />
               </Box>
             </Box>
-            <Skeleton variant="text" sx={{ fontSize: "1rem", width: 650 }} />
-            <Skeleton variant="text" sx={{ fontSize: "1rem", width: 650 }} />
-            <Skeleton variant="rounded" width={650} height={650} />
+            <Skeleton variant="text" sx={{ fontSize: "1rem", width: "100%" }} />
+            <Skeleton variant="text" sx={{ fontSize: "1rem", width: "100%" }} />
+            <Skeleton variant="rounded" width="100%" height={650} />
           </Box>
         ))}
       </Box>
