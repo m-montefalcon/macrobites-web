@@ -7,7 +7,7 @@ import {
   useState,
   ReactNode,
 } from "react";
-import { apiMe, apiLogout } from "@/lib/api";
+import { apiMe, apiLogout } from "@/lib/api/auth/api";
 
 type User = { id: string; email: string; name: string; avatar?: string } | null;
 
