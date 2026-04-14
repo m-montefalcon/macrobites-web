@@ -1,19 +1,10 @@
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/v1/api";
-
-const apiFetch = (path: string, options?: RequestInit) =>
-  fetch(`${BASE_URL}${path}`, {
-    credentials: "include",
-    headers: { "Content-Type": "application/json" },
-    ...options,
-  });
+import { apiFetch } from "../api.config";
 
 export async function apiRegister(
   email: string,
   password: string,
   name: string,
 ) {
-  console.log("Registering user:", { email, name });
   const res = await apiFetch("/auth/register", {
     method: "POST",
     body: JSON.stringify({ email, password, name }),
