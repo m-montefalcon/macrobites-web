@@ -5,7 +5,7 @@ const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#408A71", // tertiary — used for buttons, links
+      main: "#408A71",
       light: "#B0E4CC",
       dark: "#285A48",
       contrastText: "#091413",
@@ -17,17 +17,17 @@ const theme = createTheme({
       contrastText: "#B0E4CC",
     },
     background: {
-      default: "#091413", // primary — page background
-      paper: "#285A48", // secondary — cards, modals, drawers
+      default: "#091413",
+      paper: "#111E1C",
     },
     text: {
-      primary: "#B0E4CC", // fourth — main readable text
-      secondary: "#408A71", // tertiary — muted/secondary text
+      primary: "#EAF7F3",
+      secondary: "#9FC7BA",
     },
-    divider: "#285A48",
+    divider: "rgba(255, 255, 255, 0.12)",
   },
   typography: {
-    fontFamily: "'Inter', sans-serif", // swap with your preferred font
+    fontFamily: "'Inter', sans-serif",
   },
   components: {
     MuiButton: {
@@ -41,8 +41,8 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: "#285A48",
-          border: "1px solid #408A71",
+          backgroundColor: "#111E1C",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
         },
       },
     },
@@ -50,7 +50,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#091413",
-          borderBottom: "1px solid #285A48",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         },
       },
     },

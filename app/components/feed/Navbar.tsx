@@ -29,8 +29,6 @@ export default function Navbar() {
 
   const isActive = (path: string) => pathname.startsWith(path);
 
-  const activeColor = "#B0E4CC";
-  const inactiveColor = "white";
   const { user, logout } = useAuth();
   const { name, avatar } = user || {};
 
@@ -42,11 +40,13 @@ export default function Navbar() {
   };
   return (
     <AppBar
-      position="static"
+      position="sticky"
       elevation={0}
       sx={{
-        background: "#091413",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        top: 0,
+        bgcolor: "background.default",
+        borderBottom: "1px solid",
+        borderColor: "divider",
       }}
     >
       <Toolbar sx={{ position: "relative", minHeight: "64px" }}>
@@ -61,10 +61,15 @@ export default function Navbar() {
             fontWeight: 600,
             letterSpacing: 0.5,
             textDecoration: "none",
-            color: "white",
+            color: "text.primary",
           }}
         >
-          MacroBites
+          <Box component="span" sx={{ display: { xs: "inline", sm: "none" } }}>
+            MB
+          </Box>
+          <Box component="span" sx={{ display: { xs: "none", sm: "inline" } }}>
+            MacroBites
+          </Box>
         </Typography>
 
         {/* 🔸 Center Icons */}
@@ -73,7 +78,7 @@ export default function Navbar() {
             margin: "0 auto",
             display: "flex",
             gap: 4,
-            background: "rgba(255,255,255,0.04)",
+            bgcolor: "action.hover",
             padding: "6px 16px",
             borderRadius: "999px",
           }}
@@ -82,7 +87,7 @@ export default function Navbar() {
           <IconButton component={Link} href="/feed">
             <DynamicFeedIcon
               sx={{
-                color: isActive("/feed") ? activeColor : inactiveColor,
+                color: isActive("/feed") ? "primary.light" : "text.primary",
                 transition: "0.2s",
                 transform: isActive("/feed") ? "scale(1.2)" : "scale(1)",
               }}
@@ -93,7 +98,9 @@ export default function Navbar() {
           <IconButton component={Link} href="/saved-posts">
             <FavoriteIcon
               sx={{
-                color: isActive("/saved-posts") ? activeColor : inactiveColor,
+                color: isActive("/saved-posts")
+                  ? "primary.light"
+                  : "text.primary",
                 transition: "0.2s",
                 transform: isActive("/saved-posts") ? "scale(1.2)" : "scale(1)",
               }}
@@ -104,7 +111,7 @@ export default function Navbar() {
           <IconButton component={Link} href="/explore">
             <ExploreIcon
               sx={{
-                color: isActive("/explore") ? activeColor : inactiveColor,
+                color: isActive("/explore") ? "primary.light" : "text.primary",
                 transition: "0.2s",
                 transform: isActive("/explore") ? "scale(1.2)" : "scale(1)",
               }}
@@ -119,7 +126,9 @@ export default function Navbar() {
               sx={{
                 width: 32,
                 height: 32,
-                bgcolor: isActive("/profile") ? "#408A71" : "#285A48",
+                bgcolor: isActive("/profile")
+                  ? "primary.main"
+                  : "secondary.main",
                 fontSize: 14,
                 transition: "0.2s",
               }}
@@ -151,7 +160,7 @@ export default function Navbar() {
             <MenuItem component={Link} href="/settings">
               Settings
             </MenuItem>
-            <MenuItem sx={{ color: "red" }} onClick={handleLogout}>
+            <MenuItem sx={{ color: "error.main" }} onClick={handleLogout}>
               Logout
             </MenuItem>
           </Menu>
