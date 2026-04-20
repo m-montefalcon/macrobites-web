@@ -324,6 +324,7 @@ export default function ImageCard({ src, alt }: ImageCardProps) {
           {/* Left chevron */}
           {images.length > 1 && (
             <IconButton
+              aria-label="previous image"
               onClick={handlePrev}
               sx={{
                 position: "absolute",
