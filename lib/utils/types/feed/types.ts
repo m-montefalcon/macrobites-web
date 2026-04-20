@@ -6,12 +6,7 @@ export type FeedCardItem = {
   imageUrl: string | string[];
   title: string;
   description: string;
-  macros: {
-    protein: number;
-    carbs: number;
-    fat: number;
-    calories: number;
-  };
+  macros: Macros;
   createdAt: string;
   isGoodProteinRatio: boolean;
   isGoodCarbsRatio: boolean;
@@ -41,12 +36,7 @@ export type TitleAndDescriptionCardProps = {
 
 export type MacrosCardProps = {
   id: string;
-  macros: {
-    protein: number;
-    carbs: number;
-    fat: number;
-    calories: number;
-  };
+  macros: Macros;
 };
 export type Macros = {
   calories: number;
