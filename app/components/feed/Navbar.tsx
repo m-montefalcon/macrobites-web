@@ -51,26 +51,40 @@ export default function Navbar() {
     >
       <Toolbar sx={{ position: "relative", minHeight: "64px" }}>
         {/* 🔹 Logo */}
-        <Typography
-          variant="h6"
+        <Box
           component={Link}
           href="/feed"
           sx={{
             position: "absolute",
             left: 16,
-            fontWeight: 600,
-            letterSpacing: 0.5,
             textDecoration: "none",
-            color: "text.primary",
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
           }}
         >
-          <Box component="span" sx={{ display: { xs: "inline", sm: "none" } }}>
-            MB
-          </Box>
-          <Box component="span" sx={{ display: { xs: "none", sm: "inline" } }}>
+          {/* Logo Image */}
+          <Image
+            src="/logo.png"
+            alt="MacroBites"
+            width={40}
+            height={40}
+            style={{ width: "auto", height: "40px" }}
+          />
+
+          {/* MacroBites Text - Desktop Only */}
+          <Typography
+            variant="h6"
+            sx={{
+              display: { xs: "none", sm: "inline" },
+              fontWeight: 600,
+              letterSpacing: 0.5,
+              color: "text.primary",
+            }}
+          >
             MacroBites
-          </Box>
-        </Typography>
+          </Typography>
+        </Box>
 
         {/* 🔸 Center Icons */}
         <Box
