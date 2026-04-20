@@ -71,7 +71,7 @@ export default function MacrosCard({ id, macros }: MacrosCardProps) {
       </Box>
       <Box sx={{ mt: 0.75, display: "flex", flexWrap: "wrap", gap: 0.75 }}>
         {Object.entries(macros)
-          .filter(([value]) => value !== undefined)
+          .filter(([, value]) => value !== undefined)
           .map(([key, value], idx) => {
             const unit = key === "calories" ? " kcal" : "g";
             return (
