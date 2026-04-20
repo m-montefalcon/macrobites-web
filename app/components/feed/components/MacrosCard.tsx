@@ -71,12 +71,12 @@ export default function MacrosCard({ id, macros }: MacrosCardProps) {
       </Box>
       <Box sx={{ mt: 0.75, display: "flex", flexWrap: "wrap", gap: 0.75 }}>
         {Object.entries(macros)
-          .filter(([value]) => value !== undefined)
-          .map(([key, value], idx) => {
+          .filter(([, value]) => value !== undefined)
+          .map(([key, value]) => {
             const unit = key === "calories" ? " kcal" : "g";
             return (
               <Typography
-                key={`${id}-macro-${idx}`}
+                key={`${id}-macro-${key}`}
                 variant="body2"
                 sx={{
                   px: 1,

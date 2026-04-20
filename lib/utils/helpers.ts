@@ -1,9 +1,9 @@
 import { Macros } from "./types/feed/types";
 
 export const getRatios = (macros: Macros) => {
-  const proteinCalories = macros.protein * 4;
-  const carbsCalories = macros.carbs * 4;
-  const fatCalories = macros.fat * 9;
+  const proteinCalories = macros.protein * 4 || 0;
+  const carbsCalories = macros.carbs * 4 || 0;
+  const fatCalories = macros.fat * 9 || 0;
 
   const total =
     macros.calories || proteinCalories + carbsCalories + fatCalories;

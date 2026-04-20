@@ -45,7 +45,15 @@ export default function ImageCard({ src, alt }: ImageCardProps) {
     return (
       <>
         <Box
+          role="button"
+          tabIndex={0}
           onClick={() => handleImageClick(0)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleImageClick(0);
+            }
+          }}
           sx={{ cursor: "pointer", width: "100%", aspectRatio: "4 / 3" }}
         >
           <CardMedia
@@ -118,7 +126,15 @@ export default function ImageCard({ src, alt }: ImageCardProps) {
         {images.length === 3 ? (
           <>
             <Box
+              role="button"
+              tabIndex={0}
               onClick={() => handleImageClick(0)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleImageClick(0);
+                }
+              }}
               sx={{
                 position: "relative",
                 aspectRatio: "4 / 3",
@@ -153,7 +169,15 @@ export default function ImageCard({ src, alt }: ImageCardProps) {
               {[1, 2].map((idx) => (
                 <Box
                   key={idx}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => handleImageClick(idx)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleImageClick(idx);
+                    }
+                  }}
                   sx={{
                     position: "relative",
                     aspectRatio: "1",
@@ -194,7 +218,15 @@ export default function ImageCard({ src, alt }: ImageCardProps) {
               (_, idx) => (
                 <Box
                   key={idx}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => handleImageClick(idx)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleImageClick(idx);
+                    }
+                  }}
                   sx={{
                     position: "relative",
                     aspectRatio: "1",
