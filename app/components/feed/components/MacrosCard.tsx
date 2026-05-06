@@ -1,4 +1,6 @@
-import { Box, Typography, Tooltip } from "@mui/material";
+"use client";
+
+import { Box, Typography, Tooltip, IconButton } from "@mui/material";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import BoltIcon from "@mui/icons-material/Bolt";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
@@ -33,39 +35,43 @@ export default function MacrosCard({ id, macros }: MacrosCardProps) {
           <Tooltip
             title="Protein is a good amount for this meal"
             enterTouchDelay={0}
-            leaveTouchDelay={1500}
+            leaveTouchDelay={150}
           >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <FitnessCenterIcon
-                sx={{ fontSize: 14, color: "primary.light", cursor: "pointer" }}
-              />
-            </Box>
+            <span>
+              <IconButton size="small" sx={{ p: 0 }}>
+                <FitnessCenterIcon
+                  sx={{ fontSize: 14, color: "primary.light" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
         )}
         {carbsGood && (
           <Tooltip
             title="Carbs are well-balanced for this meal"
             enterTouchDelay={0}
-            leaveTouchDelay={1500}
+            leaveTouchDelay={150}
           >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <BoltIcon
-                sx={{ fontSize: 14, color: "primary.light", cursor: "pointer" }}
-              />
-            </Box>
+            <span>
+              <IconButton size="small" sx={{ p: 0 }}>
+                <BoltIcon sx={{ fontSize: 14, color: "primary.light" }} />
+              </IconButton>
+            </span>
           </Tooltip>
         )}
         {fatGood && (
           <Tooltip
             title="Fat content is optimal for this meal"
             enterTouchDelay={0}
-            leaveTouchDelay={1500}
+            leaveTouchDelay={150}
           >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <LocalFireDepartmentIcon
-                sx={{ fontSize: 14, color: "primary.light", cursor: "pointer" }}
-              />
-            </Box>
+            <span>
+              <IconButton size="small" sx={{ p: 0 }}>
+                <LocalFireDepartmentIcon
+                  sx={{ fontSize: 14, color: "primary.light" }}
+                />
+              </IconButton>
+            </span>
           </Tooltip>
         )}
       </Box>
@@ -76,7 +82,7 @@ export default function MacrosCard({ id, macros }: MacrosCardProps) {
             const unit = key === "calories" ? " kcal" : "g";
             return (
               <Typography
-                key={`${id}-macro-${key}`}
+                key={`${id}-macro-${idx}`}
                 variant="body2"
                 sx={{
                   px: 1,
